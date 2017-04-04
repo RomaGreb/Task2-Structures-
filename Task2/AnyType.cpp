@@ -7,16 +7,12 @@ AnyType::AnyType(): data_type(Types::UNDEFINED)
 {
 }
 
-AnyType::AnyType(const AnyType& any_type_obj)
+AnyType::AnyType(const AnyType& any_type_obj): data_type(any_type_obj.data_type), data(any_type_obj.data)
 {
-    data_type = any_type_obj.data_type;
-    data = any_type_obj.data;
 }
 
-AnyType::AnyType(AnyType&& any_type_obj)
+AnyType::AnyType(AnyType&& any_type_obj): data(std::move(any_type_obj.data)), data_type(std::move(any_type_obj.data_type))
 {
-    this->data = std::move(any_type_obj.data);
-    this->data_type = std::move(any_type_obj.data_type);
     any_type_obj.data_type = Types::UNDEFINED;
 }
 
@@ -30,7 +26,7 @@ AnyType::AnyType(signed char signed_char_var): data_type(Types::SIGNED_CHAR)
     data.signed_char_var = signed_char_var;
 }
 
-AnyType::AnyType(unsigned char unsigned_char_var):data_type(Types::UNSIGNED_CHAR)
+AnyType::AnyType(unsigned char unsigned_char_var): data_type(Types::UNSIGNED_CHAR)
 {
     data.unsigned_char_var = unsigned_char_var;
 }
@@ -115,7 +111,7 @@ AnyType& AnyType::operator=(const AnyType& any_type_obj)
     return *this;
 }
 
-AnyType& AnyType::operator =(AnyType&& right)
+AnyType& AnyType::operator=(AnyType&& right)
 {
     if(this != &right)
     {
