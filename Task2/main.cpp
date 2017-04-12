@@ -1,7 +1,7 @@
 #include <iostream>
 #include"AnyType.h"
 
-using namespace ISXAnyType;
+using namespace AnyType;
 
 int main()
 {
