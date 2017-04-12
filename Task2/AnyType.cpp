@@ -1,6 +1,6 @@
 #include "AnyType.h"
 
-namespace ISXAnyType
+namespace AnyType
 {
 
 AnyType::AnyType(): data_type(Types::UNDEFINED)
