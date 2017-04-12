@@ -2,7 +2,7 @@
 #include<ostream>
 #include<exception>
 
-namespace ISXAnyType
+namespace AnyType
 {
 
 enum class Types
